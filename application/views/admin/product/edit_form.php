@@ -42,6 +42,7 @@
             <div class="form-group">
               <label>Photo</label>
               <input type="file" name="image" class="form-control">
+              <input type="hidden" name="old_image" value="<?= $product->image ?>">
             </div>
 
             <div class="form-group">

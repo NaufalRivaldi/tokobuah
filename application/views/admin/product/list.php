@@ -21,34 +21,43 @@
         <div class="container-fluid">
 
           <!-- table -->
-          <div class="table responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>NO</th>
-                  <th>NAME</th>
-                  <th>PRICE</th>
-                  <th>PHOTO</th>
-                  <th>DESCRIPTION</th>
-                  <th>ACTION</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php $no = 1; foreach ($product as $key => $value): ?>
-                  <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= ucwords($value->name) ?></td>
-                    <td><?= "Rp. ".number_format($value->price) ?></td>
-                    <td><img src="<?= base_url('upload/product/'.$value->image) ?>" width="64"></td>
-                    <td><?= substr($value->description, 0, 120) ?>...</td>
-                    <td>
-                      <a href="<?= site_url('admin/product/edit/'.$value->product_id) ?>" class="btn btn-success">Edit</a> 
-                      <a href="<?= site_url('admin/product/delete/'.$value->product_id) ?>" class="btn btn-danger" onclick="return confirm('Hapus Data?');">Delete</a>
-                    </td>
-                  </tr>
-                <?php endforeach ?>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="card-header">
+              <a class="nav-link" href="<?= site_url('admin/product/add') ?>">
+                <i class="fas fa-fw fa-plus"></i> Insert Data
+              </a>
+            </div>
+            <div class="card-body">
+              <div class="table responsive">
+                <table class="table table-hover" id="dataTable">
+                  <thead>
+                    <tr>
+                      <th>NO</th>
+                      <th>NAME</th>
+                      <th>PRICE</th>
+                      <th>PHOTO</th>
+                      <th>DESCRIPTION</th>
+                      <th>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $no = 1; foreach ($product as $key => $value): ?>
+                      <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= ucwords($value->name) ?></td>
+                        <td><?= "Rp. ".number_format($value->price) ?></td>
+                        <td><img src="<?= base_url('upload/product/'.$value->image) ?>" width="64"></td>
+                        <td><?= substr($value->description, 0, 120) ?>...</td>
+                        <td>
+                          <a href="<?= site_url('admin/product/edit/'.$value->product_id) ?>" class="btn btn-success">Edit</a> 
+                          <a href="<?= site_url('admin/product/delete/'.$value->product_id) ?>" class="btn btn-danger" onclick="return confirm('Hapus Data?');">Delete</a>
+                        </td>
+                      </tr>
+                    <?php endforeach ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
         </div>
