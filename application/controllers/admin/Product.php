@@ -23,7 +23,7 @@ class Product extends CI_Controller
 
 		if($validation->run()){
 			$product->save();
-			$this->session->set_flashdata('success', 'Data Berhasil disimpan');
+			$this->session->set_flashdata('success', 'Data has been add!');
 		}
 
 		$this->load->view('admin/product/new_form');

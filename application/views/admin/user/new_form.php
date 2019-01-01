@@ -19,14 +19,24 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
-          <?php if ($this->session->flashdata('success')): ?>
-          <div class="alert alert-success" role="alert">
-            <?php echo $this->session->flashdata('success'); ?>
-          </div>
-          <?php endif; ?>
+          <h3>Form Insert New User</h3>
+          <form action="<?= site_url('admin/user/add') ?>" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username" class="form-control <?= form_error('usename') ? 'is-invalid' : '' ?>">
+              <div class="invalid-feedback">
+                <?= form_error('username') ?>
+              </div>
+            </div>
 
-          <h3>Form Insert Product</h3>
-          <form action="<?= site_url('admin/product/add') ?>" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control <?= form_error('password') ? 'is-invalid' : '' ?>">
+              <div class="invalid-feedback">
+                <?= form_error('password') ?>
+              </div>
+            </div>
+
             <div class="form-group">
               <label>Name</label>
               <input type="text" name="name" class="form-control <?= form_error('name') ? 'is-invalid' : '' ?>">
@@ -36,23 +46,26 @@
             </div>
 
             <div class="form-group">
-              <label>Price</label>
-              <input type="number" name="price" class="form-control <?= form_error('price') ? 'is-invalid' : '' ?>">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control <?= form_error('email') ? 'is-invalid' : '' ?>">
               <div class="invalid-feedback">
-                <?= form_error('price') ?>
+                <?= form_error('email') ?>
               </div>
             </div>
 
             <div class="form-group">
-              <label>Photo</label>
-              <input type="file" name="image" class="form-control">
+              <label>No Telepon</label>
+              <input type="text" name="no_telp" class="form-control <?= form_error('no_telp') ? 'is-invalid' : '' ?>">
+              <div class="invalid-feedback">
+                <?= form_error('no_telp') ?>
+              </div>
             </div>
 
             <div class="form-group">
-              <label>Description</label>
-              <textarea name="description" class="form-control <?= form_error('description') ? 'is-invalid' : '' ?>""></textarea>
+              <label>Address</label>
+              <textarea name="address" class="form-control <?= form_error('address') ? 'is-invalid' : '' ?>""></textarea>
               <div class="invalid-feedback">
-                <?= form_error('description') ?>
+                <?= form_error('address') ?>
               </div>
             </div>
 
