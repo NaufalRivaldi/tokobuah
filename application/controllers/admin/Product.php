@@ -50,8 +50,13 @@ class Product extends CI_Controller
 	public function delete($id=null)
 	{
 		if(!isset($id)) show_404();
+		$data = $this->product_model->getById($id);
+		$url = $data->image;
 
 		if($this->product_model->delete($id)){
+			if($url != "default.jpg"){
+				unlink('upload/product/'.$url);
+			}
 			redirect(site_url('admin/product'));
 		}
 	}
