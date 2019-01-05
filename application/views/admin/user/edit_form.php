@@ -31,14 +31,6 @@
             </div>
 
             <div class="form-group">
-              <label>Password</label>
-              <input type="password" name="password" class="form-control <?= form_error('password') ? 'is-invalid' : '' ?>" value="<?= $user->password ?>">
-              <div class="invalid-feedback">
-                <?= form_error('password') ?>
-              </div>
-            </div>
-
-            <div class="form-group">
               <label>Name</label>
               <input type="text" name="name" class="form-control <?= form_error('name') ? 'is-invalid' : '' ?>" value="<?= $user->name ?>">
               <div class="invalid-feedback">

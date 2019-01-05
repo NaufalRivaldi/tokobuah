@@ -57,7 +57,7 @@ class User_model extends CI_Model
 	public function save(){
 		$post = $this->input->post();
 		$this->username = $post['username'];
-		$this->password = $post['password'];
+		$this->password = md5($post['password']);
 		$this->name = $post['name'];
 		$this->email = $post['email'];
 		$this->no_telp = $post['no_telp'];
@@ -70,7 +70,6 @@ class User_model extends CI_Model
 		$post = $this->input->post();
 		$this->user_id = $post['id'];
 		$this->username = $post['username'];
-		$this->password = $post['password'];
 		$this->name = $post['name'];
 		$this->email = $post['email'];
 		$this->no_telp = $post['no_telp'];

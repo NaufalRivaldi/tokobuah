@@ -12,7 +12,7 @@ class Product extends CI_Controller
 	public function index()
 	{
 		$data["product"] = $this->product_model->getAll();
-		$this->load->view('admin/product/list', $data);
+		$this->load->view('admin/product/list', $data);	
 	}
 
 	public function add()
